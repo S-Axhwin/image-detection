@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MLProject: Real-Time Object Detection with COCO-SSD
 
-## Getting Started
+This project is a React-based web application that uses TensorFlow.js and the COCO-SSD model to perform real-time object detection through a webcam feed. Detected objects are highlighted with bounding boxes, and "person" detections are specially styled for easy identification.
 
-First, run the development server:
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Components](#components)
+- [Dependencies](#dependencies)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+## Installation
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/S-Axhwin/image-detection.git
+   cd image-detection
+
+	2.	Install Dependencies:
+Make sure you have bun run time installed, then run:
+
+bun install
+
+
+	3.	Run the Application:
+Start the development server with:
+
 bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+	4.	Access the Application:
+Open your web browser and go to http://localhost:3000.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Usage
 
-## Learn More
+After starting the application, allow camera access when prompted. The app will:
 
-To learn more about Next.js, take a look at the following resources:
+	•	Display the webcam feed with real-time object detection.
+	•	Highlight detected objects with bounding boxes, using a red bounding box for “person” detections.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Here’s an overview of the main directories and files in the project:
 
-## Deploy on Vercel
+my-app/
+├── app/
+│   ├── ai/
+│   │   └── objectDetect.tsx       # Main component for object detection
+│   ├── components/
+│   │   └── ui/
+│   │       └── theme-provider.tsx # Theme provider for UI styling
+│   ├── fonts/                     # Fonts for the app
+│   └── globals.css                # Global styles
+├── utils/
+│   └── render-predictions.ts      # Utility function for drawing bounding boxes
+├── public/                        # Public assets
+├── .eslintrc.json                 # Linter configuration
+├── package.json                   # Project dependencies
+└── README.md                      # Project documentation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Components
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+	•	ObjectDetection: The main component (objectDetect.tsx) that sets up the webcam feed, loads the COCO-SSD model, and displays real-time detections on a canvas overlay.
+	•	renderPredictions: A utility function in utils/render-predictions.ts that draws bounding boxes and labels for detected objects on the canvas. It highlights “person” detections with a red box.
+
+Dependencies
+
+The main dependencies for this project include:
+
+	•	React: UI library for building the interface.
+	•	TensorFlow.js: JavaScript library for machine learning.
+	•	@tensorflow-models/coco-ssd: Pre-trained object detection model.
+	•	react-webcam: Component to access the webcam.
