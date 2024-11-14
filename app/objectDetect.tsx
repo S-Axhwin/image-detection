@@ -10,6 +10,7 @@ import { renderPredictions } from "@/utils/render-predictions";
 const ObjectDetection = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [detectInterval, setDetectInterval] = useState<NodeJS.Timeout | null>(null);
+    const [facingMode, setFacingMode] = useState<"user" | "environment">("user");
 
     const webcamRef = useRef<Webcam>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -79,7 +80,7 @@ const ObjectDetection = () => {
                         className="rounded-md w-full lg:h-[720px]"
                         muted
                         videoConstraints={{
-                            facingMode: { exact: "environment" }
+                            facingMode: facingMode
                         }}
                     />
                     {/* canvas */}
@@ -87,6 +88,11 @@ const ObjectDetection = () => {
                         ref={canvasRef}
                         className="absolute top-0 left-0 z-99999 w-full lg:h-[720px]"
                     />
+                    <div className="absolute bottom-0 right-0 p-4">
+                        <button onClick={() => setFacingMode(facingMode === "user" ? "environment" : "user")}>
+                            Switch to {facingMode === "user" ? "environment" : "user"} camera
+                        </button>
+                    </div>
                 </div>
             )}
         </div>

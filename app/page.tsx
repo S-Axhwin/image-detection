@@ -52,7 +52,7 @@ export default function AIImageDetectionLanding() {
 
     return (
         <>
-            <Navbar scrollToSection={scrollToSection} />
+                <Navbar scrollToSection={scrollToSection} />
             <main className="flex-1 pt-14">
                 <AnimatedSection className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-secondary">
                     <div className="container px-4 md:px-6">
