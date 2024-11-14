@@ -1,13 +1,14 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-import { motion, useAnimation, useInView } from "framer-motion"
+import { Avatar, AvatarFallback, } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Avatar, AvatarFallback, } from "@/components/ui/avatar"
-import { Camera, Users, Coffee, Watch, RockingChairIcon as ChairIcon } from 'lucide-react'
+import { motion, useAnimation, useInView } from "framer-motion"
+import { RockingChairIcon as ChairIcon, Coffee, Users, Watch } from 'lucide-react'
 import Link from "next/link"
+import { useEffect, useRef } from "react"
 
+import Navbar from "@/components/Navbar"
 import { contri } from "./contr"
 
 const MotionLink = motion(Link)
@@ -51,28 +52,7 @@ export default function AIImageDetectionLanding() {
 
     return (
         <>
-            <header className="fixed top-0 left-0 right-0 z-50 flex items-center px-4 border-b lg:px-6 h-14 border-border bg-background">
-                <Link className="flex items-center justify-center" href="/">
-                    <Camera className="w-6 h-6 text-primary" />
-                    <span className="ml-2 text-lg font-bold text-primary">AIDetect</span>
-                </Link>
-                <nav className="flex gap-4 ml-auto sm:gap-6">
-                    <button onClick={() => scrollToSection('features')} className="text-sm font-medium hover:text-primary hover:underline underline-offset-4">
-                        Features
-                    </button>
-                    <button onClick={() => scrollToSection('how-it-works')} className="text-sm font-medium hover:text-primary hover:underline underline-offset-4">
-                        How It Works
-                    </button>
-                    <button onClick={() => scrollToSection('contributors')} className="text-sm font-medium hover:text-primary hover:underline underline-offset-4">
-                        Contributors
-                    </button>
-                    <Button>
-                        <Link className="text-sm font-medium hover:text-primary hover:underline underline-offset-4" href="/ai">
-                            Demo
-                        </Link>
-                    </Button>
-                </nav>
-            </header>
+            <Navbar scrollToSection={scrollToSection} />
             <main className="flex-1 pt-14">
                 <AnimatedSection className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-secondary">
                     <div className="container px-4 md:px-6">
@@ -144,7 +124,7 @@ export default function AIImageDetectionLanding() {
                         </motion.h2>
                         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                             {[
-                                { title: "Upload Image", description: "Simply upload or drag and drop your image into our system." },
+                                { title: "Turn you cam", description: "Simply turn on your web camera then your set for step 2." },
                                 { title: "AI Analysis", description: "Our advanced AI algorithms analyze the image in seconds." },
                                 { title: "View Results", description: "Get instant results with highlighted detections and confidence scores." }
                             ].map((step, index) => (
