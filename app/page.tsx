@@ -35,7 +35,7 @@ function AnimatedSection({ children, className, id }: { children: React.ReactNod
                 hidden: { opacity: 0, y: 50 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5, staggerChildren: 0.2 } }
             }}
-            className={className}
+            className={`flex flex-col items-center justify-center ${className}`}
         >
             {children}
         </motion.section>

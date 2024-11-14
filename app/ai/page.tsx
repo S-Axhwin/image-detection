@@ -10,7 +10,7 @@ export default function Home() {
     const [showAI, setShowAI] = useState(false)
 
     return (
-        <main className="flex flex-col items-center justify-center min-h-screen p-8 bg-gradient-to-br from-gray-900 via-purple-950 to-violet-950">
+        <main className="flex flex-col w-screen items-center justify-center min-h-screen p-8 bg-gradient-to-br from-gray-900 via-purple-950 to-violet-950">
             <motion.div
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}

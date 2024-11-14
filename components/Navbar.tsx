@@ -65,7 +65,9 @@ export default function Navbar({ scrollToSection }: { scrollToSection: (section:
                 </Sheet>
                 <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
                     <div className="w-full flex-1 md:w-auto md:flex-none">
-                        <Button className="w-full md:w-auto">Sign In</Button>
+                        <Link href="/ai">
+                            <Button className="w-full md:w-auto" >Live</Button>
+                        </Link>
                     </div>
                 </div>
             </div>

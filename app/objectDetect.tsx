@@ -74,11 +74,13 @@ const ObjectDetection = () => {
                 <div className="gradient-text">Loading AI Model...</div>
             ) : (
                 <div className="relative flex justify-center items-center gradient p-1.5 rounded-md">
-                    {/* webcam */}
                     <Webcam
                         ref={webcamRef}
                         className="rounded-md w-full lg:h-[720px]"
                         muted
+                        videoConstraints={{
+                            facingMode: { exact: "environment" }
+                        }}
                     />
                     {/* canvas */}
                     <canvas
