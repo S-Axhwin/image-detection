@@ -42,6 +42,7 @@ Project Structure
 
 Here’s an overview of the main directories and files in the project:
 
+```
 my-app/
 ├── app/
 │   ├── ai/
@@ -57,6 +58,7 @@ my-app/
 ├── .eslintrc.json                 # Linter configuration
 ├── package.json                   # Project dependencies
 └── README.md                      # Project documentation
+```
 
 Components
 
