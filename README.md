@@ -9,36 +9,37 @@ This project is a React-based web application that uses TensorFlow.js and the CO
 - [Components](#components)
 - [Dependencies](#dependencies)
 
-## Installation
+### Installation
 
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/S-Axhwin/image-detection.git
    cd image-detection
 
-	2.	Install Dependencies:
+2.	Install Dependencies:
 Make sure you have bun run time installed, then run:
 
 bun install
 
 
-	3.	Run the Application:
+3.	Run the Application:
 Start the development server with:
 
 bun dev
 
 
-	4.	Access the Application:
+4.	Access the Application:
 Open your web browser and go to http://localhost:3000.
 
-Usage
+
+### Usage
 
 After starting the application, allow camera access when prompted. The app will:
 
 	•	Display the webcam feed with real-time object detection.
 	•	Highlight detected objects with bounding boxes, using a red bounding box for “person” detections.
 
-Project Structure
+### Project Structure
 
 Here’s an overview of the main directories and files in the project:
 
@@ -60,12 +61,12 @@ my-app/
 └── README.md                      # Project documentation
 ```
 
-Components
+### Components
 
 	•	ObjectDetection: The main component (objectDetect.tsx) that sets up the webcam feed, loads the COCO-SSD model, and displays real-time detections on a canvas overlay.
 	•	renderPredictions: A utility function in utils/render-predictions.ts that draws bounding boxes and labels for detected objects on the canvas. It highlights “person” detections with a red box.
 
-Dependencies
+### Dependencies
 
 The main dependencies for this project include:
 
